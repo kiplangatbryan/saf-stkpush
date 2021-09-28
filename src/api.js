@@ -46,7 +46,8 @@ exports.lipaOnline = async (authToken) => {
         PhoneNumber: 254746613059,
         PartyB: 174379,
         PhoneNumber: 254746613059,
-        CallBackURL: "https://usawagenda.herokuapp.com/callback",
+        // CallBackURL: "https://usawagenda.herokuapp.com/callback",
+        CallBackURL: "https://okoa-net.herokuapp.com/callback",
         AccountReference: "Okoa Net",
         TransactionDesc: "service payment",
       },
@@ -66,9 +67,6 @@ exports.callback = async (req, res, next)=>{
   const { Body } = req.body
   console.log(Body)
   console.table(Body.stkCallback.CallbackMetadata)
-
-
-
 
 }
 

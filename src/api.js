@@ -1,5 +1,4 @@
 const axios = require("axios");
-const { time } = require("console");
 const dotenv = require("dotenv");
 const path = require("path");
 const moment = require("moment");
@@ -48,8 +47,8 @@ exports.lipaOnline = async (authToken) => {
         PartyB: 174379,
         PhoneNumber: 254746613059,
         CallBackURL: "https://usawagenda.herokuapp.com/callback",
-        AccountReference: "BIT SYSTEMS",
-        TransactionDesc: "Payment of Foundation Contribution",
+        AccountReference: "Okoa Net",
+        TransactionDesc: "service payment",
       },
       {
         headers: {
@@ -62,6 +61,16 @@ exports.lipaOnline = async (authToken) => {
     console.log(err.response.data);
   }
 };
+
+exports.callback = async (req, res, next)=>{
+  const { Body } = req.body
+  console.log(Body)
+  console.table(Body.stkCallback.CallbackMetadata)
+
+
+
+
+}
 
 exports.customerToBs = async (authToken) => {
   try {

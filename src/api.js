@@ -64,9 +64,8 @@ exports.lipaOnline = async (authToken) => {
 };
 
 exports.callback = async (req, res, next)=>{
-  const { Body } = req.body
-  console.log(Body)
-  console.table(Body.stkCallback.CallbackMetadata)
+  console.log(req.body)
+  // console.table(stkCallback.CallbackMetadata)
 
 }
 

@@ -2,6 +2,7 @@ const axios = require("axios");
 const dotenv = require("dotenv");
 const path = require("path");
 const moment = require("moment");
+const prettyjson = require('prettyjson');
 
 dotenv.config({ path: path.join(__dirname, "../config/config.env") });
 
@@ -47,7 +48,8 @@ exports.lipaOnline = async (authToken) => {
         PartyB: 174379,
         PhoneNumber: 254746613059,
         // CallBackURL: "https://usawagenda.herokuapp.com/callback",
-        CallBackURL: "https://okoa-net.herokuapp.com/callback",
+        // CallBackURL: "https://okoa-net.herokuapp.com/callback",
+        CallBackURL: "https://9621-154-159-238-74.ngrok.io/callback",
         AccountReference: "Okoa Net",
         TransactionDesc: "service payment",
       },
@@ -63,9 +65,18 @@ exports.lipaOnline = async (authToken) => {
   }
 };
 
-exports.callback = async (req, res, next)=>{
-  console.log(req.body)
-  // console.table(stkCallback.CallbackMetadata)
+exports.callback =  (req, res) => {
+  console.log('-----------Received M-Pesa webhook-----------');
+ 
+  console.log(prettyjson.render(req.body));
+  console.log('-----------------------');
+
+  let message = {
+	  "ResponseCode": "00000000",
+	  "ResponseDesc": "success"
+  };
+  
+  res.status(200).json(message)
 
 }
 

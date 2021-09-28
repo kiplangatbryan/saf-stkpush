@@ -3,6 +3,9 @@ const express  = require('express')
 const PORT = process.env.PORT || 3000 
 const app = express()
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 const { getAccessToken, lipaOnline, customerToBs, simulateC2B, callback } = require('./api.js')
 
 

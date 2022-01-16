@@ -49,8 +49,8 @@ exports.lipaOnline = async (authToken) => {
         PhoneNumber: 254746613059,
         // CallBackURL: "https://usawagenda.herokuapp.com/callback",
         // CallBackURL: "https://okoa-net.herokuapp.com/callback",
-        CallBackURL: "https://9621-154-159-238-74.ngrok.io/callback",
-        AccountReference: "Okoa Net",
+        CallBackURL: "https://freedomapk.herokuapp.com/callback",
+        AccountReference: "Freecom Wifi",
         TransactionDesc: "service payment",
       },
       {
